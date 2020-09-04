@@ -1,15 +1,11 @@
 <?php
-
-// Be sure to include the H5P renderer so it can be extended
-require_once($CFG->dirroot . '/mod/hvp/renderer.php');
-
 /**
- * Class theme_h5pmod_mod_hvp_renderer
+ * Class theme_h5pmod_core_h5p_renderer.
  *
  * Extends the H5P renderer so that we are able to override the relevant
- * functions declared there
+ * functions declared there.
  */
-class theme_h5pmod_mod_hvp_renderer extends mod_hvp_renderer {
+class theme_h5pmod_core_h5p_renderer extends \core_h5p\output\renderer {
 
     /**
      * Add styles when an H5P is displayed.
@@ -18,7 +14,7 @@ class theme_h5pmod_mod_hvp_renderer extends mod_hvp_renderer {
      * @param array $libraries Libraries that wil be shown.
      * @param string $embedType How the H5P is displayed.
      */
-    public function hvp_alter_styles(&$styles, $libraries, $embedType) {
+    public function h5p_alter_styles(&$styles, $libraries, $embedType) {
         global $CFG;
         if (
             isset($libraries['H5P.InteractiveVideo']) &&
@@ -38,7 +34,7 @@ class theme_h5pmod_mod_hvp_renderer extends mod_hvp_renderer {
      * @param array $libraries Libraries that will be displayed.
      * @param string $embedType How the H5P is displayed.
      */
-    public function hvp_alter_scripts(&$scripts, $libraries, $embedType) {
+    public function h5p_alter_scripts(&$scripts, $libraries, $embedType) {
         global $CFG;
         if (
             isset($libraries['H5P.InteractiveVideo']) &&
@@ -63,7 +59,7 @@ class theme_h5pmod_mod_hvp_renderer extends mod_hvp_renderer {
      * @param int $majorVersion Major version of library
      * @param int $minorVersion Minor version of library
      */
-    public function hvp_alter_semantics(&$semantics, $name, $majorVersion, $minorVersion) {
+    public function h5p_alter_semantics(&$semantics, $name, $majorVersion, $minorVersion) {
         if (
             $name === 'H5P.MultiChoice' &&
             $majorVersion == 1
@@ -82,7 +78,7 @@ class theme_h5pmod_mod_hvp_renderer extends mod_hvp_renderer {
      * @param int $majorVersion Major version of library
      * @param int $minorVersion Minor version of library
      */
-    public function hvp_alter_filtered_parameters(&$parameters, $name, $majorVersion, $minorVersion) {
+    public function h5p_alter_filtered_parameters(&$parameters, $name, $majorVersion, $minorVersion) {
         if (
             $name === 'H5P.MultiChoice' &&
             $majorVersion == 1
