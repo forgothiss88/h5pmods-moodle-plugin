@@ -9,12 +9,12 @@ $THEME->name = 'h5pmod';
 //////////////////////////////////
 //
 $THEME->doctype = 'html5';
-$THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom');
+$THEME->parents = ['boost'];
+$THEME->sheets = ['custom'];
 $THEME->supportscssoptimisation = false;
-$THEME->yuicssmodules = array();
-$THEME->enable_dock = true;
-$THEME->editor_sheets = array();
+$THEME->yuicssmodules = [];
+$THEME->enable_dock = false;
+$THEME->editor_sheets = [];
 
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_h5pmod_process_css';
