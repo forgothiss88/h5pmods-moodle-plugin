@@ -24,7 +24,7 @@ class theme_h5pmod_core_h5p_renderer extends \core_h5p\output\renderer
             $libraries['H5P.InteractiveVideo']['majorVersion'] == '1'
         ) {
             $styles[] = (object) array(
-                'path'    => $CFG->httpswwwroot . '/theme/overridetest/style/custom.css',
+                'path'    => $CFG->httpswwwroot . '/theme/h5pmod/style/custom.css',
                 'version' => '?ver=0.0.1',
             );
         }
