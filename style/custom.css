@@ -1,7 +1,3 @@
-.h5p-slider {
-    background: red;
-}
-
-.h5p-joubelui-button {
-    background: deeppink !important;
+.h5p-control.h5p-playbackRate {
+    display: none !important;
 }
